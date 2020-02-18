@@ -26,6 +26,7 @@ RUN apk update && \
   apk add --update --no-cache \
     icu-dev=~64.2 \
     libzip-dev=~1.5 \
+    mysql-client \
     oniguruma-dev=~6.9 && \
   cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
   echo ${TZ} > /etc/timezone && \

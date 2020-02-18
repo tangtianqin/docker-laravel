@@ -10,13 +10,18 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $table = 'onet_member_mst';
+    protected $primaryKey = 'member_id';
+    const CREATED_AT = 'insert_date';
+    const UPDATED_AT = 'update_date';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'openid_id', 'surname', 'first_name', 'sex', 'birth_date', 'member_sts', 'pc_mail', 'mb_mail'
     ];
 
     /**
@@ -25,7 +30,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
     ];
 
     /**
@@ -34,6 +38,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'birth_date' => 'datetime',
     ];
 }
