@@ -43,7 +43,7 @@ class AuthServiceProvider extends ServiceProvider
                         $u = CognitoJWT::verifyToken($jwt, $region, $userPoolId);
                         if (isset($u)) {
                             $e = substr($u->email, 12, 10);
-                            $user = User::where('member_id', $e)->first();
+                            $user = User::where('member_id', $e)->where('member_sts', '01')->first();
                             if ($user) {
                                 cache()->put($jwt, $user, 60*60);
                             }
