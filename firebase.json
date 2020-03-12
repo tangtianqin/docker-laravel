@@ -1,0 +1,16 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "emulators": {
+    "firestore": {
+      "port": "18080"
+    },
+    "database": {
+      "port": "19000"
+    },
+    "pubsub": {
+      "port": "18085"
+    }
+  }
+}

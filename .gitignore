@@ -4,3 +4,5 @@
 !/docker/php/psysh/config.php
 /logs/*
 /.env
+.DS_Store
+src/composer.lock
